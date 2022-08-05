@@ -14,4 +14,9 @@ class Continent extends Model
     //anular capos de auditoria
     public $timestamps = false; 
     use HasFactory;
+
+    //relacion entre contintente y region 
+    public function regiones(){
+        return $this->hasMany(Region::class,'continent_id');
+    }
 }
